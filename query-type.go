@@ -14,6 +14,7 @@ const (
 	TypeSOA   = QueryType(dns.TypeSOA)
 	TypeCNAME = QueryType(dns.TypeCNAME)
 	TypeTXT   = QueryType(dns.TypeTXT)
+	TypeSPF   = QueryType(dns.TypeSPF)
 )
 
 func (q QueryType) String() (queryTypeS string) {
