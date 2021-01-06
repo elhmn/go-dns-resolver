@@ -8,6 +8,7 @@ type QueryType uint16
 
 const (
 	TypeA     = QueryType(dns.TypeA)
+	TypeAAAA  = QueryType(dns.TypeAAAA)
 	TypeNS    = QueryType(dns.TypeNS)
 	TypeMX    = QueryType(dns.TypeMX)
 	TypeSOA   = QueryType(dns.TypeSOA)

@@ -1,9 +1,10 @@
 package resolver
 
 import (
-	"github.com/miekg/dns"
 	"strings"
 	"time"
+
+	"github.com/miekg/dns"
 )
 
 type Result struct {
@@ -30,6 +31,11 @@ func NewResultItemWithDnsRR(queryType QueryType, answer dns.RR) (resultItem *Res
 		if a, ok := answer.(*dns.A); ok {
 			resultItem.setTtl(a.Hdr)
 			resultItem.Content = a.A.String()
+		}
+	case TypeAAAA:
+		if a, ok := answer.(*dns.AAAA); ok {
+			resultItem.setTtl(a.Hdr)
+			resultItem.Content = a.AAAA.String()
 		}
 	case TypeCNAME:
 		if cname, ok := answer.(*dns.CNAME); ok {
