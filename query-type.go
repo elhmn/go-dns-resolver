@@ -21,6 +21,8 @@ func (q QueryType) String() (queryTypeS string) {
 	switch q {
 	case TypeA:
 		queryTypeS = "A"
+	case TypeAAAA:
+		queryTypeS = "AAAA"
 	case TypeNS:
 		queryTypeS = "NS"
 	case TypeMX:
@@ -31,6 +33,8 @@ func (q QueryType) String() (queryTypeS string) {
 		queryTypeS = "CNAME"
 	case TypeTXT:
 		queryTypeS = "TXT"
+	case TypeSPF:
+		queryTypeS = "SPF"
 	default:
 		queryTypeS = "Unsportted Type"
 	}
