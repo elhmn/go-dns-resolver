@@ -63,6 +63,11 @@ func NewResultItemWithDnsRR(queryType QueryType, answer dns.RR) (resultItem *Res
 			resultItem.setTtl(spf.Hdr)
 			resultItem.Content = strings.Join(spf.Txt, " ")
 		}
+	case TypePTR:
+		if ptr, ok := answer.(*dns.PTR); ok {
+			resultItem.setTtl(ptr.Hdr)
+			resultItem.Content = ptr.Ptr
+		}
 
 	}
 	return

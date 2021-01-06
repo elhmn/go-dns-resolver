@@ -15,6 +15,7 @@ const (
 	TypeCNAME = QueryType(dns.TypeCNAME)
 	TypeTXT   = QueryType(dns.TypeTXT)
 	TypeSPF   = QueryType(dns.TypeSPF)
+	TypePTR   = QueryType(dns.TypePTR)
 )
 
 func (q QueryType) String() (queryTypeS string) {
@@ -35,6 +36,8 @@ func (q QueryType) String() (queryTypeS string) {
 		queryTypeS = "TXT"
 	case TypeSPF:
 		queryTypeS = "SPF"
+	case TypePTR:
+		queryTypeS = "PTR"
 	default:
 		queryTypeS = "Unsportted Type"
 	}
